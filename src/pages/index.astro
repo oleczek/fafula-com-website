@@ -1,0 +1,277 @@
+---
+import '@fontsource-variable/fraunces/full.css';
+import '@fontsource-variable/fraunces/full-italic.css';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/400-italic.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/global.css';
+import SectionRule from '../components/SectionRule.astro';
+
+const site = 'https://fafula.com';
+const title = 'Aleksander Fafuła, PhD — Working in AI since 2007';
+const description =
+  'Aleksander Fafuła, PhD — working in AI since 2007. AI and data systems from the infrastructure up, behavioural finance, FunduszAI, and the first AI drum kit.';
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Aleksander Fafuła',
+  honorificSuffix: 'PhD',
+  url: site,
+  email: 'mailto:aleksander@fafula.com',
+  jobTitle: 'Principal AI & Data Architect',
+  description:
+    'AI and data systems from the infrastructure up. PhD in quantitative behavioural finance. Working in AI since 2007.',
+  knowsAbout: [
+    'Artificial Intelligence', 'Data Architecture', 'Behavioural Finance',
+    'Machine Learning', 'Data Infrastructure',
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/aleksander-fafula/',
+    'https://x.com/alexfafula',
+    'https://funduszai.pl',
+    'https://www.kierunekinnowacje.pl/',
+    'https://aidrummer.io',
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={site + '/'} />
+    <meta name="author" content="Aleksander Fafuła" />
+    <meta name="theme-color" content="#060504" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={site + '/'} />
+    <meta property="og:image" content={site + '/og.png'} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={site + '/og.png'} />
+    <meta name="twitter:site" content="@alexfafula" />
+    <meta name="twitter:creator" content="@alexfafula" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+
+    <noscript>
+      <style>[data-reveal] { opacity: 1 !important; transform: none !important; }</style>
+    </noscript>
+  </head>
+
+  <body>
+    <a class="skip" href="#profile">Skip to content</a>
+    <a class="brandmark" href="#top" aria-label="Aleksander Fafuła — back to top">fafula<span class="tld">.com</span></a>
+
+    <header class="hero" id="top">
+      <div class="stage-canvas"><canvas class="swarm" aria-hidden="true"></canvas></div>
+      <div class="wrap">
+        <h1 class="vh">Aleksander Fafuła, PhD</h1>
+        <p class="tag">Working in AI since 2007.</p>
+        <span class="cue">scroll</span>
+      </div>
+    </header>
+
+    <main id="loop">
+      <div class="loop-unit">
+      <section id="profile" aria-labelledby="profile-h">
+        <div class="wrap">
+          <h2 id="profile-h" class="kicker"><span class="idx">01</span>Profile</h2>
+          <p class="lead" data-reveal>
+            I work on AI and data systems — from the infrastructure up to what
+            runs on it. FreeBSD was my main OS as a kid, and the terminal has
+            been home ever since. PhD in quantitative behavioural finance — data
+            mining on investors' cognitive biases, a thread that runs straight to
+            FunduszAI. I've worked across financial markets, banking and
+            industry. Earlier, a few years as a touring rock drummer — they still
+            turn up in my AI work.
+          </p>
+        </div>
+      </section>
+
+      <SectionRule />
+
+      <section id="work-on" aria-labelledby="work-on-h">
+        <div class="wrap">
+          <h2 id="work-on-h" class="kicker"><span class="idx">02</span>What I'm working on</h2>
+
+          <article class="proj" data-reveal>
+            <h3><span class="name">FunduszAI</span></h3>
+            <a class="url" href="https://funduszai.pl" target="_blank" rel="noopener">funduszai.pl</a>
+            <p>
+              An experiment in AI-driven equity analysis on the Warsaw Stock
+              Exchange. For each stock, a panel of AI agents argues it out — news,
+              technical, fundamentals, macro, bull against bear — and settles on a
+              position with a confidence level, then scores its own calls over
+              time. A public test of what current AI can and can't do in real
+              markets. Not investment advice.
+            </p>
+          </article>
+
+          <article class="proj" data-reveal>
+            <h3><span class="name">AI &amp; data infrastructure in finance</span></h3>
+            <p>
+              The systems that sit underneath AI products in financial services —
+              data pipelines, compute, and the parts that have to keep running
+              once the demo is over. Most of this work is under NDA; FunduszAI is
+              the piece I can show in the open.
+            </p>
+          </article>
+
+          <article class="proj" data-reveal>
+            <h3>
+              <span class="name">Kierunek Innowacje</span>
+              <span class="sub">(Direction: Innovation)</span>
+            </h3>
+            <a class="url" href="https://www.kierunekinnowacje.pl/" target="_blank" rel="noopener">kierunekinnowacje.pl</a>
+            <p>
+              A business podcast in Polish — on Spotify, YouTube and Apple
+              Podcasts — that I host. Long-form conversations with people building
+              and running things in tech and business, about putting AI and new
+              technology to practical use: real problems and what actually works,
+              not theory.
+            </p>
+          </article>
+
+          <article class="proj" data-reveal>
+            <h3><span class="name">The world's first drum kit with real AI</span></h3>
+            <a class="url" href="https://aidrummer.io" target="_blank" rel="noopener">aidrummer.io</a>
+            <p>
+              Not a beat generator and not a robot arm — an AI you talk to that
+              builds, tunes and plays real drum hardware. Most music AI just makes
+              audio; this one drives a physical instrument from plain
+              conversation. Telling it what you want replaces hours buried in
+              menus.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <SectionRule />
+
+      <section id="background" aria-labelledby="background-h">
+        <div class="wrap notes">
+          <h2 id="background-h" class="kicker"><span class="idx">03</span>Background</h2>
+          <p data-reveal>PhD in quantitative behavioural finance, awarded with distinction.</p>
+          <p data-reveal>Doctoral dissertation recognised in the national NTIE competition in economic informatics, 2014.</p>
+          <p data-reveal>
+            Two-time winner of <a href="https://digitalfestival.pl/digitalars-zwyciezcy/" target="_blank" rel="noopener">Digital Ars</a>, Poland's first AI-art competition (DigitalPoland) — the open-category piece, "AI painting with the drums", a GAN that paints in real time to live drumming.
+          </p>
+        </div>
+      </section>
+
+      <SectionRule />
+
+      <section id="work" aria-labelledby="work-h">
+        <div class="wrap">
+          <h2 id="work-h" class="kicker"><span class="idx">04</span>Selected work</h2>
+          <ul class="work">
+            <li data-reveal>
+              <span class="role">Principal AI &amp; Data Architect</span>
+              <span class="yr">(2025–present)</span>. Current engagements are under NDA.
+            </li>
+            <li data-reveal>
+              <span class="role">Chief Data Officer — Chabre, data &amp; AI consulting</span>
+              <span class="yr">(2023–2025)</span>. Client projects in the Gulf.
+            </li>
+            <li data-reveal>
+              <span class="role">Director, Data Architecture &amp; Analytics — Diversey, a global US/Dutch chemical and manufacturing company</span>
+              <span class="yr">(2023)</span>. Predictive maintenance for a 1,200-robot fleet.
+            </li>
+            <li data-reveal>
+              <span class="role">Global Enterprise Solutions Architect — British American Tobacco, London</span>
+              <span class="yr">(2020–2023)</span>. Data-science architecture for revenue growth and marketing, rolled out across international markets.
+            </li>
+            <li data-reveal>
+              <span class="role">Head of AI &amp; Data Science Infrastructure — Publicis Groupe, advertising &amp; media</span>
+              <span class="yr">(2018–2020)</span>. Built the group's geo-analytics for campaign targeting.
+            </li>
+            <li data-reveal>
+              <span class="role">Data Analytics &amp; Big Data, Manager — PwC Poland, consulting</span>
+              <span class="yr">(2015–2018)</span>. Built a big-data platform for a global food retailer that lifted average basket size up to 23% — a
+              <a href="https://www.cloudera.com/customers/pwc-cee.html" target="_blank" rel="noopener">Cloudera customer story</a>. Also built M.A.I.A., PwC's AI recruitment assistant, and big-data systems in telecom and banking.
+            </li>
+            <li data-reveal>
+              <span class="role">Chief Data Scientist — MarketPsych, US</span>
+              <span class="yr">(2011–2015)</span>. The behavioural-finance firm behind the <a href="https://www.lseg.com/en/data-analytics/financial-data/analytics/marketpsych-analytics" target="_blank" rel="noopener">Thomson Reuters MarketPsych Indices</a> — a market-sentiment data feed used on Wall Street by hedge funds and trading desks. Research I produced there is cited in Richard Peterson's <em>Trading on Sentiment</em> (Wiley).
+            </li>
+            <li data-reveal>
+              <span class="role">Assistant Professor, Lecturer &amp; Researcher — Wrocław University of Economics, Kozminski University</span>
+              <span class="yr">(2007–2022)</span>. Teaching AI and data science.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <SectionRule />
+
+      <section id="contact" aria-labelledby="contact-h">
+        <div class="wrap">
+          <h2 id="contact-h" class="kicker"><span class="idx">05</span>Contact</h2>
+          <ul class="contact">
+            <li data-reveal>
+              <span class="lab">Email</span>
+              <a href="mailto:aleksander@fafula.com">aleksander@fafula.com</a>
+            </li>
+            <li data-reveal>
+              <span class="lab">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/aleksander-fafula/" target="_blank" rel="noopener">linkedin.com/in/aleksander-fafula</a>
+            </li>
+            <li data-reveal>
+              <span class="lab">X</span>
+              <a href="https://x.com/alexfafula" target="_blank" rel="noopener">@alexfafula</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <SectionRule />
+
+      <section class="hero interlude" aria-hidden="true">
+        <div class="stage-canvas"><canvas class="swarm"></canvas></div>
+        <div class="wrap">
+          <p class="tag">Working in AI since 2007.</p>
+          <span class="cue">scroll</span>
+        </div>
+      </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">fafula.com · Aleksander Fafuła</div>
+    </footer>
+
+    <script>
+      import { initSwarm } from '../lib/swarm';
+      import { initLoop } from '../lib/loop';
+      initSwarm();
+      initLoop();
+
+      // brandmark: a small wordmark that appears once the hero scrolls away
+      const heroEl = document.getElementById('top');
+      const brand = document.querySelector('.brandmark');
+      if (heroEl && brand) {
+        new IntersectionObserver(
+          (es) => { for (const e of es) brand.classList.toggle('show', !e.isIntersecting); },
+          { threshold: 0.12 }
+        ).observe(heroEl);
+        brand.addEventListener('click', (ev) => { ev.preventDefault(); window.scrollTo(0, 0); });
+      }
+    </script>
+  </body>
+</html>

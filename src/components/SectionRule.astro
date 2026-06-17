@@ -1,0 +1,25 @@
+---
+// Section divider as a faint "staff line" that FADES OUT at both ends (no hard edges),
+// broken in the middle by a single small accent lozenge — one quiet "downbeat" note
+// instead of a repeated tick comb. Ties to the rhythm motif without the cliché.
+---
+<div class="rule" role="separator" aria-hidden="true">
+  <span class="line"></span>
+  <span class="node"></span>
+  <span class="line"></span>
+</div>
+
+<style>
+  .rule { width: min(92vw, 42rem); margin: clamp(2.5rem, 6vh, 4rem) auto; display: flex; align-items: center; }
+  .line { flex: 1; height: 1px; }
+  .line:first-child { background: linear-gradient(to right, transparent, var(--hair) 88%); }
+  .line:last-child  { background: linear-gradient(to left,  transparent, var(--hair) 88%); }
+  .node {
+    flex: 0 0 auto;
+    width: 6px; height: 6px;
+    margin: 0 0.9rem;
+    background: var(--accent);
+    transform: rotate(45deg);
+    opacity: 0.85;
+  }
+</style>

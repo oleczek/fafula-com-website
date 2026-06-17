@@ -1,0 +1,15 @@
+# build output & deps
+dist/
+node_modules/
+.astro/
+
+# logs & env
+*.log
+.env
+.env.*
+.DS_Store
+
+# 🔒 private handoff/runbook — NEVER commit (this repo is PUBLIC)
+README.md
+HANDOFF.md
+*.secret.md
